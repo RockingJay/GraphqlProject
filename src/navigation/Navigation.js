@@ -58,6 +58,8 @@ const UserListStack = () => {
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="UserList" component={UserList} />
     </Stack.Navigator>
+    /* We can also add UserProfile screen here but i want to show that screen in different stack otherwise 
+    it will display above bottom tabs */
   );
 };
 
@@ -66,7 +68,11 @@ export default function Navigation() {
     <Stack.Navigator
       initialRouteName="BottomTabStack"
       screenOptions={{headerShown: false}}>
-      <Stack.Screen name={'BottomTabStack'} component={BottomTabStack} />
+      <Stack.Screen
+        options={{title: 'Home'}}
+        name={'BottomTabStack'}
+        component={BottomTabStack}
+      />
       <Stack.Screen
         options={{headerShown: true, title: 'Profile'}}
         name="UserProfile"
